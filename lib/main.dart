@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:my_own_widgets/image_widgets.dart';
+import 'package:my_own_widgets/my_counter_page.dart';
 
 void main(List<String> args) {
   debugPrint('main metodu çalıştı........');
@@ -17,60 +19,12 @@ class MyApp extends StatelessWidget {
           primarySwatch: Colors.teal,
           textTheme: TextTheme(
               headlineLarge: TextStyle(color: Colors.purple, fontSize: 22))),
-      home: MyHomePage(),
-    );
-  }
-}
-
-class MyHomePage extends StatefulWidget {
-  const MyHomePage({super.key});
-
-  @override
-  State<MyHomePage> createState() => _MyHomePageState();
-}
-
-class _MyHomePageState extends State<MyHomePage> {
-  int _sayac = 0;
-
-  @override
-  Widget build(BuildContext context) {
-    debugPrint('homepage build çalıştı........');
-    return Container(
-      child: Scaffold(
-        appBar: AppBar(title: Text('sayaç app')),
-        body: Center(
-          child: Column(mainAxisAlignment: MainAxisAlignment.center, children: [
-            MyNewTextWidget(),
-            Text(_sayac.toString(),
-                style: Theme.of(context).textTheme.displayLarge),
-          ]),
+      home: Scaffold(
+        appBar: AppBar(
+          title: Text('Imaj Ornekleri'),
         ),
-        floatingActionButton: FloatingActionButton(
-          onPressed: () {
-            debugPrint('butona tıklandı........');
-            sayaciArttir();
-          },
-          child: Icon(Icons.add),
-        ),
+        body: ImageOrnekleri(),
       ),
     );
-  }
-
-  void sayaciArttir() {
-    setState(() {
-      ///o widget in state sini yeniler....
-    });
-    _sayac++;
-  }
-}
-
-class MyNewTextWidget extends StatelessWidget {
-  const MyNewTextWidget({
-    super.key,
-  });
-
-  @override
-  Widget build(BuildContext context) {
-    return Text('butona basılma miktarı', style: TextStyle(fontSize: 24));
   }
 }
