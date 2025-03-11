@@ -12,29 +12,35 @@ class ImageOrnekleri extends StatelessWidget {
     return Center(
       child: Column(
         children: [
-          Container(
-            color: Colors.red.shade300,
-            width: 200,
-            height: 200,
-            child: Image.asset(
-              'assets/images/1.png',
-              fit: BoxFit.cover,
-            ),
-          ),
-          Container(
-            color: Colors.red.shade300,
-            width: 200,
-            height: 200,
-            child: Image.network(_imgUrl),
-          ),
-          Container(
-              color: Colors.red.shade300,
-              child: CircleAvatar(
-                // child: Text('E',
-                //     style: Theme.of(context).textTheme.headlineMedium),
-                backgroundImage: NetworkImage(_logoUrl),
-                radius: 90,
-              )),
+          IntrinsicHeight(
+              child: Row(
+                  crossAxisAlignment: CrossAxisAlignment.stretch,
+                  children: [
+                Expanded(
+                  child: Container(
+                    color: Colors.red.shade300,
+                    child: Image.asset(
+                      'assets/images/1.png',
+                      fit: BoxFit.cover,
+                    ),
+                  ),
+                ),
+                Expanded(
+                    child: Container(
+                  color: Colors.red.shade300,
+                  child: Image.network(_imgUrl),
+                )),
+                Expanded(
+                    child: Container(
+                        color: Colors.red.shade300,
+                        child: CircleAvatar(
+                          // child: Text('E',
+                          //     style: Theme.of(context).textTheme.headlineMedium),
+                          backgroundImage: NetworkImage(_logoUrl),
+                        )))
+              ])),
+          FadeInImage.assetNetwork(
+              placeholder: 'assets/images/loading.gif', image: _imgUrl)
         ],
       ),
     );
