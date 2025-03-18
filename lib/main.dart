@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:my_own_widgets/dropdown_button_kullanimi.dart';
 import 'package:my_own_widgets/image_widgets.dart';
 import 'package:my_own_widgets/my_counter_page.dart';
 import 'package:my_own_widgets/temel_buton_turleri.dart';
@@ -22,9 +23,9 @@ class MyApp extends StatelessWidget {
               headlineLarge: TextStyle(color: Colors.purple, fontSize: 22))),
       home: Scaffold(
         appBar: AppBar(
-          title: Text('Imaj Ornekleri'),
+          title: Text('Buton Ornekleri'),
         ),
-        body: TemelButonlar(),
+        body: DropdownButtonKullanimi(),
       ),
     );
   }
