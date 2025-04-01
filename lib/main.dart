@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:my_own_widgets/dropdown_button_kullanimi.dart';
 import 'package:my_own_widgets/image_widgets.dart';
 import 'package:my_own_widgets/my_counter_page.dart';
+import 'package:my_own_widgets/popupmenu_kullanimi.dart';
 import 'package:my_own_widgets/temel_buton_turleri.dart';
 
 void main(List<String> args) {
@@ -25,7 +26,7 @@ class MyApp extends StatelessWidget {
         appBar: AppBar(
           title: Text('Buton Ornekleri'),
         ),
-        body: DropdownButtonKullanimi(),
+        body: PopupmenuKullanimi(),
       ),
     );
   }
